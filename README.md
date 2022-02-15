@@ -1,4 +1,6 @@
-### Hi there 👋
+Current undergraduate student at the University of Southern California. Bachelors of Science in Quantiative Biology and Minor in Statistics. Class of 2022.
+
+Contact alex@alexdhill.com
 
 <!--
 **alexdhill/alexdhill** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
