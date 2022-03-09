@@ -1,4 +1,4 @@
-Current undergraduate student at the University of Southern California. Bachelors of Science in Quantiative Biology and Minor in Statistics. Class of 2022.
+Undergraduate student at the University of Southern California, class of 2022. Bachelors of Science in Quantiative Biology and Minor in Statistics.
 
 Contact alex@alexdhill.com
 
