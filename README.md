@@ -12,6 +12,4 @@ Undergrad was in Quantitative Biology with a minor in Statistics from the Univer
 
 My background is in molecular biology, algorithm design, and applied statistics. 
 
-I don't have much work available publicly, but an interesting assignment of mine is posted at [pairwise alignment](https://github.com/alexdhill/alignment).
-
 #### Contact: ahill6@ucsc.edu OR me@alexdhill.com
