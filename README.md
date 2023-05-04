@@ -7,7 +7,7 @@
 /__/     \__\ |_______||_______/__/ \__\    |_______/    |__|  |__| |__| |_______||_______|
 ```
 
-PhD student in the Biomolecular Engineering and Bioinformatics program at UC Santa Cruz. 
+PhD student in Kim Lab at UC Santa Cruz, Biomolecular Engineering and Bioinformatics program.
 Undergrad was in Quantitative Biology with a minor in Statistics from the University of Southern California. 
 
 My background is in molecular biology, algorithm design, and applied statistics. 
