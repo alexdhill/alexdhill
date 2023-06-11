@@ -1,3 +1,10 @@
+Bioinformatics researcher in transcriptomics and cancer biology. Background in molecular biology and epigenetics, algorithm design, and applied statistics. 
+
+PhD student in Kim Lab at UC Santa Cruz, Biomolecular Engineering and Bioinformatics program.
+Bachelors of Science in Quantitative Biology with a minor in Statistics from the University of Southern California.
+
+#### Contact: ahill6@ucsc.edu
+
 ```
      ___       __       __________   ___     _______      __    __   __   __       __      
     /   \     |  |     |   ____\  \ /  /    |       \    |  |  |  | |  | |  |     |  |     
@@ -6,10 +13,3 @@
  /  _____  \  |  `----.|  |____ /  .  \     |  '--'  |   |  |  |  | |  | |  `----.|  `----.
 /__/     \__\ |_______||_______/__/ \__\    |_______/    |__|  |__| |__| |_______||_______|
 ```
-
-PhD student in Kim Lab at UC Santa Cruz, Biomolecular Engineering and Bioinformatics program.
-Undergrad was in Quantitative Biology with a minor in Statistics from the University of Southern California. 
-
-My background is in molecular biology, algorithm design, and applied statistics. 
-
-#### Contact: ahill6@ucsc.edu OR me@alexdhill.com
