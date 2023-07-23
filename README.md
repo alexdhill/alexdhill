@@ -25,11 +25,6 @@ I recieved a Bachelors of Science in Quantitative Biology with a minor in Statis
 <p>5 issues opened | 7 pull requests submitted | 109 commits pushed</p>
 
 ```{bash}
-R            ██████████▓░░░░░░░░░░░░░░░░   39.99 %
-HTML         ████████▓░░░░░░░░░░░░░░░░░░   29.05 %
-PHP          █████▓░░░░░░░░░░░░░░░░░░░░░   16.54 %
-CSS          ███▓░░░░░░░░░░░░░░░░░░░░░░░   9.98 %
-Other         ██▓░░░░░░░░░░░░░░░░░░░░░░░░   4.44 %
 ```
 
 <div align=center>

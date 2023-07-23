@@ -7729,12 +7729,11 @@ function weeklyRepoLangs(gql) {
         }
     }`;
         const res = yield gql(q);
-        // for (const repo in res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes)
-        // {
-        //     console.log("COMMITED TO REPO : "+res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes[repo].name)
-        // }
-        console.log(res.viewer.contributionsCollection.commitContributionsByRepository);
-        return res.viewer.contributionsCollection.commitContributionsByRepository;
+        const repos = [];
+        for (const repo of res.viewer.contributionsCollection.commitContributionsByRepository) {
+            repos.push(repo.repository);
+        }
+        return repos;
     });
 }
 function getDateTime(year) {
@@ -7916,7 +7915,7 @@ function run() {
         console.log("Replacing commits");
         readme = replaceTemplate(readme, TEMPS.COMMITS, yield calculateCommits(gql, comms));
         console.log("Replacing languages");
-        readme = replaceLanguages(readme, langs);
+        readme = replaceLanguages(readme, weeklyLangs);
         console.log("Writing README");
         yield fs_1.promises.writeFile("./README.md", readme);
         console.log("Done");
