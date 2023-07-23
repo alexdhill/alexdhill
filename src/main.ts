@@ -325,7 +325,7 @@ async function run(): Promise<void>
     console.log("Replacing commits")
     readme = replaceTemplate(readme, TEMPS.COMMITS, await calculateCommits(gql, comms))
     console.log("Replacing languages")
-    readme = replaceLanguages(readme, weeklyLangs)
+    readme = replaceLanguages(readme, langs)
     console.log("Writing README")
     await fs.writeFile("./README.md", readme)
     console.log("Done")
