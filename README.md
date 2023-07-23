@@ -23,7 +23,8 @@ I recieved a Bachelors of Science in Quantitative Biology with a minor in Statis
 TypeScript: 56.1
 CSS: 20.1
 C++: 13.5
-Other: 10.1
+HTML: 4.9
+Other: 5.1
 ```
 
 <div align=center>
