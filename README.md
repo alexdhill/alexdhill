@@ -1,3 +1,4 @@
+
 <h1 align=center>
      <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
      Alex D. Hill
@@ -19,17 +20,23 @@ I am a PhD student in the [Daniel Kim Lab](https://github.com/UCSC-Daniel-Kim-La
 
 I recieved a Bachelors of Science in Quantitative Biology with a minor in Statistics from the University of Southern California. I have both academic and research experience in molecular biology (genomics/transcriptomics, cloning, and CRISPR-based editing), machine learning (clustering with PCA*/tSNE, classification with logistic regression, random forests, and scalable vector machines), and applied statistics (data science/hypothesis testing, and estimator evaluation).
 
+### :floppy_disk: My projects by the numbers
+
+<div id="stats_generic" style="display: flex; flex-direction: row; justify-content: space-around;">
+  {{ ISSUES }} issues opened
+  {{ PULL_REQUESTS }} pull requests submitted
+  {{ COMMITS }} commits pushed
+</div>
+
 ```{bash}
-TypeScript: 56.1
-CSS: 20.1
-C++: 13.5
-HTML: 4.9
-Other: 5.1
+{{ LANGAUGE_TEMPLATE_START }}
+{{ LANGUAGE_NAME }} {{ LANGUAGE_PERCENT }}
+{{ LANGUAGE_TEMPLATE_END }}
 ```
 
 <div align=center>
-     <img src="https://img.shields.io/badge/status-working-f28c28" alt="status" />
-     <img src="https://img.shields.io/badge/research-progressing-green" alt="research" />
-     <img src="https://img.shields.io/badge/funding-yikes%20.%20.%20.-red" alt="status" />
-     <!-- <img src="https://komarev.com/ghpvc/?username=alexdhill&style=flat-square&color=blue" alt="viewers"/> -->
+      <img src="https://img.shields.io/badge/status-working-f28c28" alt="status" />
+      <img src="https://img.shields.io/badge/research-progressing-green" alt="research" />
+      <img src="https://img.shields.io/badge/funding-yikes%20.%20.%20.-red" alt="status" />
+      <!-- <img src="https://komarev.com/ghpvc/?username=alexdhill&style=flat-square&color=blue" alt="viewers"/> -->
 </div>
