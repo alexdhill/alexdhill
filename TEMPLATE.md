@@ -29,7 +29,7 @@ I recieved a Bachelors of Science in Quantitative Biology with a minor in Statis
 </div>
 
 ```{bash}
-{{ LANGAUGE_TEMPLATE_START }}
+{{ LANGUAGE_TEMPLATE_START }}
 {{ LANGUAGE_NAME }} {{ LANGUAGE_PERCENT }}
 {{ LANGUAGE_TEMPLATE_END }}
 ```

@@ -6,8 +6,8 @@ enum TEMPS {
     ISSUES = "ISSUES",
     PULL_REQUESTS = "PULL_REQUESTS",
     COMMITS = "COMMITS",
-    LANGAUGE_TEMPLATE_START = "LANGAUGE_TEMPLATE_START",
-    LANGAUGE_TEMPLATE_END = "LANGAUGE_TEMPLATE_END",
+    LANGUAGE_TEMPLATE_START = "LANGUAGE_TEMPLATE_START",
+    LANGUAGE_TEMPLATE_END = "LANGUAGE_TEMPLATE_END",
     LANGUAGE_NAME = "LANGUAGE_NAME",
     LANGUAGE_PERCENT = "LANGUAGE_PERCENT"
 }
@@ -242,8 +242,8 @@ function getLanguages(repos: Repo[])
 
 function replaceLanguages(input: string, repos: Repo[])
 {
-    const lang_start = templateMatch(TEMPS.LANGAUGE_TEMPLATE_START, true)
-    const lang_stop = templateMatch(TEMPS.LANGAUGE_TEMPLATE_END, true)
+    const lang_start = templateMatch(TEMPS.LANGUAGE_TEMPLATE_START, true)
+    const lang_stop = templateMatch(TEMPS.LANGUAGE_TEMPLATE_END, true)
 
     interface Replacement {
         start: number
