@@ -7695,8 +7695,8 @@ var TEMPS;
     TEMPS["ISSUES"] = "ISSUES";
     TEMPS["PULL_REQUESTS"] = "PULL_REQUESTS";
     TEMPS["COMMITS"] = "COMMITS";
-    TEMPS["LANGAUGE_TEMPLATE_START"] = "LANGAUGE_TEMPLATE_START";
-    TEMPS["LANGAUGE_TEMPLATE_END"] = "LANGAUGE_TEMPLATE_END";
+    TEMPS["LANGUAGE_TEMPLATE_START"] = "LANGUAGE_TEMPLATE_START";
+    TEMPS["LANGUAGE_TEMPLATE_END"] = "LANGUAGE_TEMPLATE_END";
     TEMPS["LANGUAGE_NAME"] = "LANGUAGE_NAME";
     TEMPS["LANGUAGE_PERCENT"] = "LANGUAGE_PERCENT";
 })(TEMPS || (TEMPS = {}));
@@ -7847,8 +7847,8 @@ function getLanguages(repos) {
     return langs;
 }
 function replaceLanguages(input, repos) {
-    const lang_start = templateMatch(TEMPS.LANGAUGE_TEMPLATE_START, true);
-    const lang_stop = templateMatch(TEMPS.LANGAUGE_TEMPLATE_END, true);
+    const lang_start = templateMatch(TEMPS.LANGUAGE_TEMPLATE_START, true);
+    const lang_stop = templateMatch(TEMPS.LANGUAGE_TEMPLATE_END, true);
     const reps = [];
     for (const match of input.matchAll(lang_start)) {
         if (match.index === undefined)
