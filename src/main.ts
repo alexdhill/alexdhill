@@ -72,7 +72,7 @@ async function weeklyRepoLangs(gql: typeof graphql)
 
     console.log(res.viewer.contributionsCollection.commitContributionsByRepository)
 
-    return res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes
+    return res.viewer.contributionsCollection.commitContributionsByRepository
 }
 
 function getDateTime(year: number) {
