@@ -13,6 +13,7 @@ enum TEMPS {
 }
 
 interface Repo {
+    name: string
     languages: {
         edges: Array<{
             size: number
@@ -40,6 +41,7 @@ async function weeklyRepoLangs(gql: typeof graphql)
                     repository{
                         nodes
                         {
+                            name
                             languages(first:100)
                             { 
                                 edges {
@@ -69,6 +71,10 @@ async function weeklyRepoLangs(gql: typeof graphql)
     }
 
     const res = await gql<QueryResult>(q)
+    for (const repo in res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes)
+    {
+        console.log("COMMITED TO REPO : "+res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes[repo].name)
+    }
 
     return res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes
 }
@@ -116,6 +122,7 @@ async function getUserInfo(gql: typeof graphql)
             }
             repositories(affiliations: COLLABORATOR, first: 100) {
                 nodes {
+                    name
                     languages(first: 100) {
                         edges {
                             size
@@ -312,7 +319,7 @@ async function run(): Promise<void>
     } = await getUserInfo(gql)
     console.log("Got user info")
 
-    //const weeklyLangs = await weeklyRepoLangs(gql)
+    const weeklyLangs = await weeklyRepoLangs(gql)
     console.log("Reading README")
     let readme = await fs.readFile('./TEMPLATE.md', {encoding:'utf8'})
     console.log("Replacing issues")
@@ -322,7 +329,7 @@ async function run(): Promise<void>
     console.log("Replacing commits")
     readme = replaceTemplate(readme, TEMPS.COMMITS, await calculateCommits(gql, comms))
     console.log("Replacing languages")
-    readme = replaceLanguages(readme, langs)
+    readme = replaceLanguages(readme, weeklyLangs)
     console.log("Writing README")
     await fs.writeFile("./README.md", readme)
     console.log("Done")
