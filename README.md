@@ -25,9 +25,9 @@ I recieved a Bachelors of Science in Quantitative Biology with a minor in Statis
 ```{bash}
 ```
 
-<!-- <div align=center>
-      <img src="https://img.shields.io/badge/research-progressing-green" alt="research" />
-      <img src="https://img.shields.io/badge/status-working-f28c28" alt="status" />
-      <img src="https://img.shields.io/badge/funding-yikes%20.%20.%20.-red" alt="funding" />
+<div align=center>
+      <!-- <img src="https://img.shields.io/badge/research-progressing-green" alt="research" /> -->
+      <!-- <img src="https://img.shields.io/badge/status-working-f28c28" alt="status" /> -->
+      <!-- <img src="https://img.shields.io/badge/funding-yikes%20.%20.%20.-red" alt="funding" /> -->
       <!-- <img src="https://komarev.com/ghpvc/?username=alexdhill&style=flat-square&color=blue" alt="viewers"/> -->
-</div> -->
+</div>
