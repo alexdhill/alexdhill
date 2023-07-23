@@ -20,16 +20,14 @@ I am a PhD student in the [Daniel Kim Lab](https://github.com/UCSC-Daniel-Kim-La
 
 I recieved a Bachelors of Science in Quantitative Biology with a minor in Statistics from the University of Southern California. I have both academic and research experience in molecular biology (genomics/transcriptomics, cloning, and CRISPR-based editing), machine learning (clustering with PCA*/tSNE, classification with logistic regression, random forests, and scalable vector machines), and applied statistics (data science/hypothesis testing, and estimator evaluation).
 
-#### :floppy_disk: My projects by the numbers
-
-<p>5 issues opened | 7 pull requests submitted | 109 commits pushed</p>
+#### This weeks work by language
 
 ```{bash}
 ```
 
-<div align=center>
-      <img src="https://img.shields.io/badge/status-working-f28c28" alt="status" />
+<!-- <div align=center>
       <img src="https://img.shields.io/badge/research-progressing-green" alt="research" />
-      <img src="https://img.shields.io/badge/funding-yikes%20.%20.%20.-red" alt="status" />
+      <img src="https://img.shields.io/badge/status-working-f28c28" alt="status" />
+      <img src="https://img.shields.io/badge/funding-yikes%20.%20.%20.-red" alt="funding" />
       <!-- <img src="https://komarev.com/ghpvc/?username=alexdhill&style=flat-square&color=blue" alt="viewers"/> -->
-</div>
+</div> -->
