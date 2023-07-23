@@ -1,4 +1,4 @@
-ame: 'Profile Readme Stats'
+name: 'Profile Readme Stats'
 description: 'Add basic profile info to README.md'
 inputs:
   token:
