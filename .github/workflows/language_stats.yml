@@ -1,5 +1,5 @@
 name: Add Language Info
-run-name: Getting ${{ github.actor }} commited lanugages
+run-name: Getting profile stats for ${{ github.actor }}
 on:
   schedule:
     - cron: '0 0/12 * * *'

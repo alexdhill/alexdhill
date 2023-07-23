@@ -304,10 +304,10 @@ async function run(): Promise<void>
 
     const weeklyLangs = await weeklyRepoLangs(gql)
 
-    let readme = await fs.readFile('../TEMPLATE.md', 'utf8')
+    let readme = await fs.readFile('TEMPLATE.md', 'utf8')
     readme = replaceTemplate(readme, TEMPS.ISSUES, iss)
     readme = replaceTemplate(readme, TEMPS.PULL_REQUESTS, prs)
     readme = replaceTemplate(readme, TEMPS.COMMITS, await calculateCommits(gql, comms))
     readme = replaceLanguages(readme, langs)
-    await fs.writeFile(readme, "../README.md")
+    await fs.writeFile(readme, "README.md")
 }
