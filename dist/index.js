@@ -7703,9 +7703,8 @@ var TEMPS;
 function weeklyRepoLangs(gql) {
     return __awaiter(this, void 0, void 0, function* () {
         const date = new Date();
-        const week = 7 * 24 * 60 * 60 * 1000;
         date.setUTCHours(0, 0, 0, 0);
-        date.setUTCDate(date.getUTCDate() - week);
+        date.setUTCDate(date.getUTCDate() - 7);
         let q = `{
         viewer
         {
@@ -7714,15 +7713,13 @@ function weeklyRepoLangs(gql) {
                 commitContributionsByRepository(maxRepositories:100)
                 {
                     repository{
-                        nodes
-                        {
-                            languages(first:100)
-                            { 
-                                edges {
-                                    size
-                                    node {
-                                        name
-                                    }
+                        name
+                        languages(first:100)
+                        { 
+                            edges {
+                                size
+                                node {
+                                    name
                                 }
                             }
                         }
@@ -7732,7 +7729,12 @@ function weeklyRepoLangs(gql) {
         }
     }`;
         const res = yield gql(q);
-        return res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes;
+        // for (const repo in res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes)
+        // {
+        //     console.log("COMMITED TO REPO : "+res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes[repo].name)
+        // }
+        console.log(res.viewer.contributionsCollection.commitContributionsByRepository);
+        return res.viewer.contributionsCollection.commitContributionsByRepository;
     });
 }
 function getDateTime(year) {
@@ -7770,6 +7772,7 @@ function getUserInfo(gql) {
             }
             repositories(affiliations: COLLABORATOR, first: 100) {
                 nodes {
+                    name
                     languages(first: 100) {
                         edges {
                             size
@@ -7903,7 +7906,7 @@ function run() {
         console.log("Getting user info");
         const { iss, prs, comms, langs } = yield getUserInfo(gql);
         console.log("Got user info");
-        //const weeklyLangs = await weeklyRepoLangs(gql)
+        const weeklyLangs = yield weeklyRepoLangs(gql);
         console.log("Reading README");
         let readme = yield fs_1.promises.readFile('./TEMPLATE.md', { encoding: 'utf8' });
         console.log("Replacing issues");
