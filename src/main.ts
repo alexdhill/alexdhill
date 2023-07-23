@@ -86,7 +86,7 @@ async function calculateCommits(gql: typeof graphql, years: number[])
     for (const year of years)
     {
         q += `_${year}: contributionsCollection(from: "${getDateTime(year)}")`
-        q += `{totalCommitContributions}}`
+        q += `{totalCommitContributions}`
     }
     q += `}}`
 
