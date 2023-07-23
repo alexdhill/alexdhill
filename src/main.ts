@@ -57,22 +57,24 @@ async function weeklyRepoLangs(gql: typeof graphql)
     interface QueryResult {
         viewer: {
             contributionsCollection: {
-                commitContributionsByRepository: {
-                    repository: Repo
-                }
+                commitContributionsByRepository: [
+                    {
+                        repository: Repo,
+                        name: string
+                    }
+                ]
             }
         }
     }
 
     const res = await gql<QueryResult>(q)
-    // for (const repo in res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes)
-    // {
-    //     console.log("COMMITED TO REPO : "+res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes[repo].name)
-    // }
+    const repos: Repo[] = []
+    for (const repo of res.viewer.contributionsCollection.commitContributionsByRepository)
+    {
+        repos.push(repo.repository)
+    }
 
-    console.log(res.viewer.contributionsCollection.commitContributionsByRepository)
-
-    return res.viewer.contributionsCollection.commitContributionsByRepository
+    return repos
 }
 
 function getDateTime(year: number) {
@@ -325,7 +327,7 @@ async function run(): Promise<void>
     console.log("Replacing commits")
     readme = replaceTemplate(readme, TEMPS.COMMITS, await calculateCommits(gql, comms))
     console.log("Replacing languages")
-    readme = replaceLanguages(readme, langs)
+    readme = replaceLanguages(readme, weeklyLangs)
     console.log("Writing README")
     await fs.writeFile("./README.md", readme)
     console.log("Done")
