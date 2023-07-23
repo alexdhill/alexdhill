@@ -1,0 +1,13 @@
+ame: 'Profile Readme Stats'
+description: 'Add basic profile info to README.md'
+inputs:
+  token:
+    description: 'Personal access token with `read:user` scope and optional `repo` scope'
+    required: true
+  includeForks:
+    description: 'Include forked repositories when calculating the stats'
+    required: false
+    default: false
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
