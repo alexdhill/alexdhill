@@ -22,29 +22,14 @@ I recieved a Bachelors of Science in Quantitative Biology with a minor in Statis
 
 #### :floppy_disk: My projects by the numbers
 
-<div id="stats_generic" style="{display: flex; flex-direction: row; justify-content: space-around;}">
-  <p>5 issues opened</p>
-  <p>7 pull requests submitted</p>
-  <p>109 commits pushed</p>
-</div>
+<p>5 issues opened | 7 pull requests submitted | 109 commits pushed</p>
 
 ```{bash}
 R            ██████████▓░░░░░░░░░░░░░░░░   39.99 %
 HTML         ████████▓░░░░░░░░░░░░░░░░░░   29.05 %
 PHP          █████▓░░░░░░░░░░░░░░░░░░░░░   16.54 %
 CSS          ███▓░░░░░░░░░░░░░░░░░░░░░░░   9.98 %
-JavaScript   █▓░░░░░░░░░░░░░░░░░░░░░░░░░   2.16 %
-TypeScript   █▓░░░░░░░░░░░░░░░░░░░░░░░░░   1.29 %
-Shell        █▓░░░░░░░░░░░░░░░░░░░░░░░░░   0.41 %
-XSLT         █▓░░░░░░░░░░░░░░░░░░░░░░░░░   0.27 %
-Python       █▓░░░░░░░░░░░░░░░░░░░░░░░░░   0.17 %
-C++          █▓░░░░░░░░░░░░░░░░░░░░░░░░░   0.07 %
-Dockerfile   █▓░░░░░░░░░░░░░░░░░░░░░░░░░   0.04 %
-TeX          █▓░░░░░░░░░░░░░░░░░░░░░░░░░   0.02 %
-Makefile     █▓░░░░░░░░░░░░░░░░░░░░░░░░░   0 %
-Hack         █▓░░░░░░░░░░░░░░░░░░░░░░░░░   0 %
-Singularity  █▓░░░░░░░░░░░░░░░░░░░░░░░░░   0 %
-Other      ██▓░░░░░░░░░░░░░░░░░░░░░░░░   4.44 %
+Other         ██▓░░░░░░░░░░░░░░░░░░░░░░░░   4.44 %
 ```
 
 <div align=center>
