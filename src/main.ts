@@ -302,8 +302,9 @@ async function run(): Promise<void>
         langs
     } = await getUserInfo(gql)
 
-    const weeklyLangs = await weeklyRepoLangs(gql)
+    //const weeklyLangs = await weeklyRepoLangs(gql)
 
+    console.log("test")
     let readme = await fs.readFile('./TEMPLATE.md', 'utf8')
     readme = replaceTemplate(readme, TEMPS.ISSUES, iss)
     readme = replaceTemplate(readme, TEMPS.PULL_REQUESTS, prs)
@@ -311,3 +312,5 @@ async function run(): Promise<void>
     readme = replaceLanguages(readme, langs)
     await fs.writeFile(readme, "./README.md")
 }
+
+run().catch(error => core.setFailed(error.message))

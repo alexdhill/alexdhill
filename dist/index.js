@@ -7893,7 +7893,8 @@ function run() {
             headers: { authorization: `token ${token}` }
         });
         const { iss, prs, comms, langs } = yield getUserInfo(gql);
-        const weeklyLangs = yield weeklyRepoLangs(gql);
+        //const weeklyLangs = await weeklyRepoLangs(gql)
+        console.log("test");
         let readme = yield fs_1.promises.readFile('./TEMPLATE.md', 'utf8');
         readme = replaceTemplate(readme, TEMPS.ISSUES, iss);
         readme = replaceTemplate(readme, TEMPS.PULL_REQUESTS, prs);
@@ -7902,6 +7903,7 @@ function run() {
         yield fs_1.promises.writeFile(readme, "./README.md");
     });
 }
+run().catch(error => core.setFailed(error.message));
 
 
 /***/ }),
