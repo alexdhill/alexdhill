@@ -290,26 +290,36 @@ function replaceLanguages(input: string, repos: Repo[])
 
 async function run(): Promise<void>
 {
+    console.log("Starting")
     const token = core.getInput('token')
     const gql = graphql.defaults({
         headers: { authorization: `token ${token}` }
     })
+    console.log("Read token")
 
+    console.log("Getting user info")
     const {
         iss,
         prs,
         comms,
         langs
     } = await getUserInfo(gql)
+    console.log("Got user info")
 
     //const weeklyLangs = await weeklyRepoLangs(gql)
-
+    console.log("Reading README")
     let readme = await fs.readFile('./TEMPLATE.md', {encoding:'utf8'})
+    console.log("Replacing issues")
     readme = replaceTemplate(readme, TEMPS.ISSUES, iss)
+    console.log("Replacing pull requests")
     readme = replaceTemplate(readme, TEMPS.PULL_REQUESTS, prs)
+    console.log("Replacing commits")
     readme = replaceTemplate(readme, TEMPS.COMMITS, await calculateCommits(gql, comms))
+    console.log("Replacing languages")
     readme = replaceLanguages(readme, langs)
+    console.log("Writing README")
     await fs.writeFile(readme, "./README.md")
+    console.log("Done")
 }
 
 run().catch(error => core.setFailed(error.message))
