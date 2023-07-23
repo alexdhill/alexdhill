@@ -7746,7 +7746,7 @@ function calculateCommits(gql, years) {
         let q = `{viewer{`;
         for (const year of years) {
             q += `_${year}: contributionsCollection(from: "${getDateTime(year)}")`;
-            q += `{totalCommitContributions}}`;
+            q += `{totalCommitContributions}`;
         }
         q += `}}`;
         const res = yield gql(q);
@@ -7888,19 +7888,29 @@ function replaceLanguages(input, repos) {
 }
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
+        console.log("Starting");
         const token = core.getInput('token');
         const gql = graphql_1.graphql.defaults({
             headers: { authorization: `token ${token}` }
         });
+        console.log("Read token");
+        console.log("Getting user info");
         const { iss, prs, comms, langs } = yield getUserInfo(gql);
+        console.log("Got user info");
         //const weeklyLangs = await weeklyRepoLangs(gql)
-        console.log("test");
-        let readme = yield fs_1.promises.readFile('./TEMPLATE.md', 'utf8');
+        console.log("Reading README");
+        let readme = yield fs_1.promises.readFile('./TEMPLATE.md', { encoding: 'utf8' });
+        console.log("Replacing issues");
         readme = replaceTemplate(readme, TEMPS.ISSUES, iss);
+        console.log("Replacing pull requests");
         readme = replaceTemplate(readme, TEMPS.PULL_REQUESTS, prs);
+        console.log("Replacing commits");
         readme = replaceTemplate(readme, TEMPS.COMMITS, yield calculateCommits(gql, comms));
+        console.log("Replacing languages");
         readme = replaceLanguages(readme, langs);
-        yield fs_1.promises.writeFile(readme, "./README.md");
+        console.log("Writing README");
+        yield fs_1.promises.writeFile("./README.md", readme);
+        console.log("Done");
     });
 }
 run().catch(error => core.setFailed(error.message));
