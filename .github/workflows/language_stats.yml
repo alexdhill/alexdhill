@@ -15,7 +15,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Gather README stats
-      uses: alexdhill/profile-readme-stats@v0.0.2
+      uses: alexdhill/profile-readme-stats@v0.0.3
       with:
         token: ${{ secrets.USER_TOKEN }}
     - name: Update README
