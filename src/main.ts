@@ -58,19 +58,17 @@ async function weeklyRepoLangs(gql: typeof graphql)
         viewer: {
             contributionsCollection: {
                 commitContributionsByRepository: {
-                    repository: {
-                        nodes: Repo[]
-                    }
+                    repository: Repo
                 }
             }
         }
     }
 
     const res = await gql<QueryResult>(q)
-    for (const repo in res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes)
-    {
-        console.log("COMMITED TO REPO : "+res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes[repo].name)
-    }
+    // for (const repo in res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes)
+    // {
+    //     console.log("COMMITED TO REPO : "+res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes[repo].name)
+    // }
 
     console.log(res.viewer.contributionsCollection.commitContributionsByRepository)
 
