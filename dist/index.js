@@ -7732,6 +7732,7 @@ function weeklyRepoLangs(gql) {
         const repos = [];
         for (const repo of res.viewer.contributionsCollection.commitContributionsByRepository) {
             repos.push(repo.repository);
+            console.log(repo.repository.languages);
         }
         return repos;
     });
