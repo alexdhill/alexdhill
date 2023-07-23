@@ -7,7 +7,7 @@
   <a href="[LinkedIn](https://www.linkedin.com/in/alexanderdhill/)">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
   </a>
-  <a href="[ORCiD](https://twitter.com/aIexdhill)">
+  <a href="[ORCiD]([https://twitter.com/aIexdhill](https://orcid.org/0000-0001-8903-0297))">
     <img src="https://img.shields.io/badge/ORCiD-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="Twitter Badge"/>
   </a>
   <a href="[Portfolio (WIP)](https://alexdhill.com)">
