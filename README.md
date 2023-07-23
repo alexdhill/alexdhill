@@ -18,7 +18,7 @@
 I am a PhD student in the [Daniel Kim Lab](https://github.com/UCSC-Daniel-Kim-Lab) at UC Santa Cruz, in the Biomolecular Engineering and Bioinformatics program. Im am most interested in the areas of transcriptomics/epitranscriptomics and cancer biology. I work with cell-free RNA sequencing data to identify traces of cancer from a patient's blood, to work towards the creation of a powerful, sensitive diagnostic tool.
 
 I recieved a Bachelors of Science in Quantitative Biology with a minor in Statistics from the University of Southern California. I have both academic and research experience in molecular biology (genomics/transcriptomics, cloning, and CRISPR-based editing), machine learning (clustering with PCA*/tSNE, classification with logistic regression, random forests, and scalable vector machines), and applied statistics (data science/hypothesis testing, and estimator evaluation).
-
+---
 <div align=center>
      <!-- <img src="https://img.shields.io/badge/status-working-f28c28" alt="status" /> -->
      <!-- <img src="https://img.shields.io/badge/research-progressing-green" alt="research" /> -->
