@@ -223,14 +223,14 @@ function getLanguages(repos: Repo[])
     if (maxLangs < langs.length)
     {
         const size = langs
-            .slice(maxLangs-1)
+            .splice(maxLangs-1)
             .reduce((tot, curr) => tot + curr.size, 0)
         const percent = getPercent(size)
 
         if (percent !== 0)
         {
             langs.push({
-                name: "Other     ",
+                name: "Other        ",
                 size,
                 percent
             })

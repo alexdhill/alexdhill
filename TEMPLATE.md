@@ -22,11 +22,7 @@ I recieved a Bachelors of Science in Quantitative Biology with a minor in Statis
 
 #### :floppy_disk: My projects by the numbers
 
-<div id="stats_generic" style="{display: flex; flex-direction: row; justify-content: space-around;}">
-  <p>{{ ISSUES }} issues opened</p>
-  <p>{{ PULL_REQUESTS }} pull requests submitted</p>
-  <p>{{ COMMITS }} commits pushed</p>
-</div>
+<p>{{ ISSUES }} issues opened | {{ PULL_REQUESTS }} pull requests submitted | {{ COMMITS }} commits pushed</p>
 
 ```{bash}
 {{ LANGUAGE_TEMPLATE_START }}
