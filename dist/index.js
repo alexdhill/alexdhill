@@ -7715,12 +7715,12 @@ function weeklyRepoLangs(gql) {
                     repository{
                         name
                         languages(first:100)
-                        { 
+                        {
+                            nodes {
+                                name
+                            }
                             edges {
                                 size
-                                node {
-                                    name
-                                }
                             }
                         }
                     }
@@ -7770,19 +7770,6 @@ function getUserInfo(gql) {
             contributionsCollection {
                 contributionYears
             }
-            repositories(affiliations: COLLABORATOR, first: 100) {
-                nodes {
-                    name
-                    languages(first: 100) {
-                        edges {
-                            size
-                            node {
-                                name
-                            }
-                        }
-                    }
-                }
-            }
         }
         rateLimit { cost remaining resetAt }
     }`;
@@ -7791,7 +7778,6 @@ function getUserInfo(gql) {
             iss: viewer.issues.totalCount,
             prs: viewer.pullRequests.totalCount,
             comms: viewer.contributionsCollection.contributionYears,
-            langs: viewer.repositories.nodes
         };
     });
 }
@@ -7807,17 +7793,17 @@ function replaceTemplate(input, temp, value) {
 function getLanguages(repos) {
     const languages = new Map();
     for (const repo of repos) {
-        for (const lang of repo.languages.edges) {
-            const exist = languages.get(lang.node.name);
+        for (let lang = 0; lang < repo.languages.edges.length; ++lang) {
+            const exist = languages.get(repo.languages.nodes[lang].name);
             if (exist) {
-                exist.size += lang.size;
+                exist.size += repo.languages.edges[lang].size;
             }
             else {
-                languages.set(lang.node.name, {
-                    name: (lang.node.name.length > 12) ?
-                        (lang.node.name.substring(0, 9) + "...") :
-                        (lang.node.name + "            ").substring(0, 12),
-                    size: lang.size,
+                languages.set(repo.languages.nodes[lang].name, {
+                    name: (repo.languages.nodes[lang].name.length > 12) ?
+                        (repo.languages.nodes[lang].name.substring(0, 9) + "...") :
+                        (repo.languages.nodes[lang].name + "            ").substring(0, 12),
+                    size: repo.languages.edges[lang].size,
                     percent: 0
                 });
             }
@@ -7841,7 +7827,7 @@ function getLanguages(repos) {
         const percent = getPercent(size);
         if (percent !== 0) {
             langs.push({
-                name: "Other        ",
+                name: "Other       ",
                 size,
                 percent
             });
@@ -7904,7 +7890,7 @@ function run() {
         });
         console.log("Read token");
         console.log("Getting user info");
-        const { iss, prs, comms, langs } = yield getUserInfo(gql);
+        const { iss, prs, comms } = yield getUserInfo(gql);
         console.log("Got user info");
         const weeklyLangs = yield weeklyRepoLangs(gql);
         console.log("Reading README");
