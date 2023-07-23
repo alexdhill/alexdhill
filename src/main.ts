@@ -318,7 +318,7 @@ async function run(): Promise<void>
     console.log("Replacing languages")
     readme = replaceLanguages(readme, langs)
     console.log("Writing README")
-    await fs.writeFile(readme, "./README.md")
+    await fs.writeFile("./README.md", readme)
     console.log("Done")
 }
 
