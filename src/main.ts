@@ -38,16 +38,13 @@ async function weeklyRepoLangs(gql: typeof graphql)
                 commitContributionsByRepository(maxRepositories:100)
                 {
                     repository{
-                        nodes
-                        {
-                            name
-                            languages(first:100)
-                            { 
-                                edges {
-                                    size
-                                    node {
-                                        name
-                                    }
+                        name
+                        languages(first:100)
+                        { 
+                            edges {
+                                size
+                                node {
+                                    name
                                 }
                             }
                         }
@@ -74,6 +71,8 @@ async function weeklyRepoLangs(gql: typeof graphql)
     {
         console.log("COMMITED TO REPO : "+res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes[repo].name)
     }
+
+    console.log(res.viewer.contributionsCollection.commitContributionsByRepository)
 
     return res.viewer.contributionsCollection.commitContributionsByRepository.repository.nodes
 }
