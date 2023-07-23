@@ -1,0 +1,29 @@
+name: Add Language Info
+run-name: Getting ${{ github.actor }} commited lanugages
+on:
+  schedule:
+    - cron: '0 0/12 * * *'
+  push:
+    branches:
+      - master
+      - actions-dev
+jobs:
+  publish:
+  runs-on: ubuntu-latest
+  steps:
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Gather README stats
+      uses: teoxoy/profile-readme-stats@v2
+      with:
+        token: ${{ secrets.USER_TOKEN }}
+    - name: Update README
+      run: |
+        if [[ "$(git status --porcelain)" != "" ]]; then
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -m "Updated README with the latest stats"
+          git push
+        fi
