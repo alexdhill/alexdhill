@@ -17,9 +17,9 @@ interface Repo {
     languages: {
         edges: Array<{
             size: number
-            node: {
-                name: string
-            }
+        }>
+        nodes: Array<{
+            name: string
         }>
     }
 }
@@ -40,12 +40,10 @@ async function weeklyRepoLangs(gql: typeof graphql)
                     repository{
                         name
                         languages(first:100)
-                        { 
+                        {
+                            nodes {}
                             edges {
                                 size
-                                node {
-                                    name
-                                }
                             }
                         }
                     }
@@ -119,19 +117,6 @@ async function getUserInfo(gql: typeof graphql)
             contributionsCollection {
                 contributionYears
             }
-            repositories(affiliations: COLLABORATOR, first: 100) {
-                nodes {
-                    name
-                    languages(first: 100) {
-                        edges {
-                            size
-                            node {
-                                name
-                            }
-                        }
-                    }
-                }
-            }
         }
         rateLimit { cost remaining resetAt }
     }`
@@ -147,9 +132,6 @@ async function getUserInfo(gql: typeof graphql)
             contributionsCollection: {
                 contributionYears: number[]
             }
-            repositories: {
-                nodes: Repo[]
-            }
         }
         rateLimit: {
             cost: number
@@ -164,7 +146,6 @@ async function getUserInfo(gql: typeof graphql)
         iss: viewer.issues.totalCount,
         prs: viewer.pullRequests.totalCount,
         comms: viewer.contributionsCollection.contributionYears,
-        langs: viewer.repositories.nodes
     }
 
 }
@@ -191,19 +172,20 @@ function getLanguages(repos: Repo[])
     const languages = new Map<string, Lang>()
     for (const repo of repos)
     {
-        for (const lang of repo.languages.edges)
+        for (let lang = 0; lang < repo.languages.edges.length; ++lang)
         {
-            const exist = languages.get(lang.node.name)
+            const exist = languages.get(repo.languages.nodes[lang].name)
             if (exist)
             {
-                exist.size += lang.size
-            } else
+                exist.size += repo.languages.edges[lang].size
+            }
+            else
             {
-                languages.set(lang.node.name, {
-                    name: (lang.node.name.length > 12)?
-                        (lang.node.name.substring(0, 9)+"..."):
-                        (lang.node.name+"            ").substring(0, 12),
-                    size: lang.size,
+                languages.set(repo.languages.nodes[lang].name, {
+                    name: (repo.languages.nodes[lang].name.length > 12)?
+                        (repo.languages.nodes[lang].name.substring(0, 9)+"..."):
+                        (repo.languages.nodes[lang].name+"            ").substring(0, 12),
+                    size: repo.languages.edges[lang].size,
                     percent: 0
                 })
             }
@@ -236,7 +218,7 @@ function getLanguages(repos: Repo[])
         if (percent !== 0)
         {
             langs.push({
-                name: "Other        ",
+                name: "Other       ",
                 size,
                 percent
             })
@@ -313,8 +295,7 @@ async function run(): Promise<void>
     const {
         iss,
         prs,
-        comms,
-        langs
+        comms
     } = await getUserInfo(gql)
     console.log("Got user info")
 
