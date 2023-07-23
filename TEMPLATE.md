@@ -1,3 +1,4 @@
+
 <h1 align=center>
      <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
      Alex D. Hill
@@ -19,7 +20,7 @@ I am a PhD student in the [Daniel Kim Lab](https://github.com/UCSC-Daniel-Kim-La
 
 I recieved a Bachelors of Science in Quantitative Biology with a minor in Statistics from the University of Southern California. I have both academic and research experience in molecular biology (genomics/transcriptomics, cloning, and CRISPR-based editing), machine learning (clustering with PCA*/tSNE, classification with logistic regression, random forests, and scalable vector machines), and applied statistics (data science/hypothesis testing, and estimator evaluation).
 
-### :floppy_disk: My Code by the Numbers
+### :floppy_disk: My projects by the numbers
 
 <div id="stats_generic" style="display: flex; flex-direction: row; justify-content: space-around;">
   {{ ISSUES }} issues opened
