@@ -27,9 +27,8 @@ interface Repo {
 async function weeklyRepoLangs(gql: typeof graphql)
 {
     const date = new Date()
-    const week = 7 * 24 * 60 * 60 * 1000
     date.setUTCHours(0, 0, 0, 0)
-    date.setUTCDate(date.getUTCDate() - week)
+    date.setUTCDate(date.getUTCDate() - 7)
     let q = 
     `{
         viewer
