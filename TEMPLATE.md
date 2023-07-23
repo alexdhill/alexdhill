@@ -20,7 +20,7 @@ I am a PhD student in the [Daniel Kim Lab](https://github.com/UCSC-Daniel-Kim-La
 I recieved a Bachelors of Science in Quantitative Biology with a minor in Statistics from the University of Southern California. I have both academic and research experience in molecular biology (genomics/transcriptomics, cloning, and CRISPR-based editing), machine learning (clustering with PCA*/tSNE, classification with logistic regression, random forests, and scalable vector machines), and applied statistics (data science/hypothesis testing, and estimator evaluation).
 
 ```{bash}
-{{ LANGUAGE_TEMPLATE_START:max=4 }}
+{{ LANGUAGE_TEMPLATE_START:max=5 }}
 {{ LANGUAGE_NAME }}: {{ LANGUAGE_PERCENT }}
 {{ LANGUAGE_TEMPLATE_END }}
 ```
