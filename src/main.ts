@@ -41,7 +41,9 @@ async function weeklyRepoLangs(gql: typeof graphql)
                         name
                         languages(first:100)
                         {
-                            nodes {}
+                            nodes {
+                                name
+                            }
                             edges {
                                 size
                             }
