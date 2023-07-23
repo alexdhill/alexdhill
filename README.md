@@ -20,16 +20,15 @@ I am a PhD student in the [Daniel Kim Lab](https://github.com/UCSC-Daniel-Kim-La
 
 I recieved a Bachelors of Science in Quantitative Biology with a minor in Statistics from the University of Southern California. I have both academic and research experience in molecular biology (genomics/transcriptomics, cloning, and CRISPR-based editing), machine learning (clustering with PCA*/tSNE, classification with logistic regression, random forests, and scalable vector machines), and applied statistics (data science/hypothesis testing, and estimator evaluation).
 
-### :floppy_disk: My projects by the numbers
+#### :floppy_disk: My projects by the numbers
 
-<div id="stats_generic" style="display: flex; flex-direction: row; justify-content: space-around;">
-  {{ ISSUES }} issues opened
-  {{ PULL_REQUESTS }} pull requests submitted
-  {{ COMMITS }} commits pushed
+<div id="stats_generic" style="{display: flex; flex-direction: row; justify-content: space-around;}">
+  <p>5 issues opened</p>
+  <p>7 pull requests submitted</p>
+  <p>109 commits pushed</p>
 </div>
 
 ```{bash}
-{{ LANGAUGE_TEMPLATE_START }}
 {{ LANGUAGE_NAME }} {{ LANGUAGE_PERCENT }}
 {{ LANGUAGE_TEMPLATE_END }}
 ```

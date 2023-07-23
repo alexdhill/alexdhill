@@ -7792,8 +7792,14 @@ function getUserInfo(gql) {
         };
     });
 }
+function templateMatch(name, newLine = false) {
+    let str = `\\{\\{\\s*${name}(?::(?<opts>.+?))?\\s*\\}\\}`;
+    if (newLine)
+        str += '\n?';
+    return new RegExp(str, 'g');
+}
 function replaceTemplate(input, temp, value) {
-    return input.replace(new RegExp(`\{\{\s*${temp}\s*\}\}`, 'g'), value.toString());
+    return input.replace(templateMatch(temp), String(value));
 }
 function getLanguages(repos) {
     const languages = new Map();
@@ -7841,8 +7847,8 @@ function getLanguages(repos) {
     return langs;
 }
 function replaceLanguages(input, repos) {
-    const lang_start = new RegExp(`\{\{\s*${TEMPS.LANGAUGE_TEMPLATE_START}\s*\}\}\n?`, 'g');
-    const lang_stop = new RegExp(`\{\{\s*${TEMPS.LANGAUGE_TEMPLATE_END}\s*\}\}\n?`, 'g');
+    const lang_start = templateMatch(TEMPS.LANGAUGE_TEMPLATE_START, true);
+    const lang_stop = templateMatch(TEMPS.LANGAUGE_TEMPLATE_END, true);
     const reps = [];
     for (const match of input.matchAll(lang_start)) {
         if (match.index === undefined)
