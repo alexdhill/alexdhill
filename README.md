@@ -17,8 +17,9 @@
 
 #### Personal statement
 I am a PhD candidate in the [Daniel Kim Lab](https://github.com/UCSC-Daniel-Kim-Lab) at UC Santa Cruz, in the Biomolecular Engineering and Bioinformatics program. Im am interested in the areas of transcriptomics/epitranscriptomics and cancer biology. I presently work with cell-free RNA sequencing data to identify traces of cancer from a patient's blood, to work towards the creation of a powerful, sensitive diagnostic tool. Some of my work includes:
-  - The development of the [CREATE](https://github.com/alexdhill/CREATE) pipeline for rapid repeat-aware RNA-seq data quantification
-  - Analysis of repeat elements and novel isoforms in blood plasma of Barrett's esophagus + esophageal cancer patients [first-author preprint](https://www.biorxiv.org/content/10.1101/2025.07.02.662774v1)
+  - The development of the [CRATE](https://github.com/alexdhill/CRATE) pipeline for rapid repeat-aware RNA-seq data quantification
+    - Development of helper toolkit available for install as [R package](https://github.com/alexdhill/crater)
+  - [Analysis](https://github.com/alexdhill/novel_cfRNA) of repeat elements and novel isoforms in blood plasma of Barrett's esophagus + esophageal cancer patients with associated [first-author preprint](https://www.biorxiv.org/content/10.1101/2025.07.02.662774v1)
 
 #### Academic background
 I recieved a Bachelors of Science in Quantitative Biology with a minor in Statistics from the University of Southern California. I have both academic and research experience in molecular biology (genomics/transcriptomics, cloning, and CRISPR-based editing), machine learning (clustering with PCA*/tSNE, classification with logistic regression, random forests, and scalable vector machines), and applied statistics (data science/hypothesis testing, and estimator evaluation).
